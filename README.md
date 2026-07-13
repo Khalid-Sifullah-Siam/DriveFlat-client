@@ -199,11 +199,6 @@ Alternatively, refer to the [Next.js deployment docs](https://nextjs.org/docs/ap
 
 ---
 
-## 👨‍💻 Author
-
-**Rashedul Islam**
-
-- GitHub: [@rashedulislam595](https://github.com/rashedulislam595)
 - Live Project: [drive-fleet-car-rental.vercel.app](https://drive-fleet-car-rental.vercel.app/)
 
 ---
