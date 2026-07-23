@@ -1,210 +1,200 @@
-# 🚗 DriveFleet — Car Rental Platform
-
 <div align="center">
 
-**Smart fleet management platform for efficient operations, real-time tracking, and seamless transportation control.**
+# DriveFleet
+
+### Find the right car for every journey.
+
+A modern car rental platform for discovering vehicles, making bookings, and sharing cars with other travelers.
+
+[![Live Website](https://img.shields.io/badge/Live%20Website-DriveFleet-16a34a?style=for-the-badge)](https://drive-fleet-car-rental.vercel.app/)
+[![Client](https://img.shields.io/badge/Client-Next.js-black?style=for-the-badge&logo=next.js)](https://github.com/Khalid-Sifullah-Siam/DriveFlat-client)
+[![Server](https://img.shields.io/badge/Server-Express.js-43853d?style=for-the-badge&logo=express)](https://github.com/Khalid-Sifullah-Siam/DriveFlat-server)
 
 </div>
 
----
+## About the Project
 
-## 📋 Table of Contents
+DriveFleet makes car rental simple for both renters and car owners. Users can browse available cars, search and filter the fleet, view detailed vehicle information, choose rental dates, and manage bookings from one place.
 
-- [Overview](#-overview)
-- [Live Demo](#-live-demo)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-- [Environment Variables](#-environment-variables)
-- [Available Pages](#-available-pages)
-- [Screenshots](#-screenshots)
-- [Deployment](#-deployment)
-- [Author](#-author)
+Authenticated users can also add their own vehicles, update listings, change availability, and remove cars from the marketplace. The Next.js client works with a separate Express server for car and booking data.
 
----
+## Contents
 
-## 🌟 Overview
+- [Main Features](#main-features)
+- [Built With](#built-with)
+- [User Journey](#user-journey)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Screenshots](#screenshots)
+- [Deployment](#deployment)
 
-**DriveFleet** is a full-stack car rental web application built with Next.js 16 and React 19. It allows users to browse a curated fleet of premium vehicles, view detailed car information, make bookings, and manage their reservations — all through a clean, mobile-first interface.
+## Main Features
 
-The platform supports authenticated users who can also list their own vehicles for rental, making it a two-sided marketplace for car rentals.
+### For Renters
 
----
+- Browse available cars by type, location, price, and availability
+- Search the fleet by car name
+- View detailed car specifications and rental information
+- Select pickup and return dates for a booking
+- Choose whether a driver is needed and add special notes
+- View and cancel personal bookings
 
-## 🔗 Live Demo
+### For Car Owners
 
-👉 **[https://drive-fleet-car-rental.vercel.app/](https://drive-fleet-car-rental.vercel.app/)**
+- Add a personal car to the rental marketplace
+- Update car details, pricing, location, and availability
+- View all cars added by the logged-in user
+- Delete an existing car listing
 
----
+### Platform Features
 
-## ✨ Features
+- Email/password and Google authentication with Better Auth
+- Protected booking, listing, and account routes
+- Responsive interface for desktop, tablet, and mobile
+- Loading, error, empty, and custom not-found states
+- Toast notifications for clear user feedback
 
-- 🏎️ **Browse Fleet** — Explore a wide selection of cars filtered by type (Luxury, SUV, Sedan, Hatchback) with pricing, location, and availability
-- 🔍 **Car Details** — View full specs, descriptions, and per-day rental pricing for each vehicle
-- 📅 **Booking System** — Book a car with date selection and instant confirmation
-- 📂 **My Bookings** — Authenticated users can view and manage all their reservations
-- ➕ **Add a Car** — List your own vehicle for rental on the platform
-- 🔐 **Authentication** — Secure login/signup via `better-auth` with MongoDB session management
-- 🌍 **Popular Destinations** — Curated destination highlights (Coastal Drive, Mountain Peaks, City Lights, Euro Getaway)
-- 📱 **Responsive Design** — Mobile-first UI built with Tailwind CSS v4 and HeroUI components
-- 🔔 **Toast Notifications** — Real-time user feedback via `react-toastify`
+## Built With
 
----
+| Frontend | Backend and Services |
+| --- | --- |
+| Next.js 16 App Router | Node.js and Express.js |
+| React 19 | MongoDB |
+| Tailwind CSS 4 | Better Auth |
+| HeroUI | Vercel |
+| Motion | REST API |
+| Lucide React and React Icons | React Toastify |
 
-## 🛠️ Tech Stack
+## User Journey
 
-| Category       | Technology                                      |
-|----------------|-------------------------------------------------|
-| Framework      | [Next.js 16](https://nextjs.org/) (App Router)  |
-| UI Library     | [React 19](https://react.dev/)                  |
-| Styling        | [Tailwind CSS v4](https://tailwindcss.com/)     |
-| Component Lib  | [HeroUI](https://heroui.com/)                   |
-| Database       | [MongoDB](https://www.mongodb.com/)             |
-| Auth           | [better-auth](https://better-auth.com/) + MongoDB Adapter |
-| Icons          | [Lucide React](https://lucide.dev/) · [React Icons](https://react-icons.github.io/react-icons/) |
-| Notifications  | [React Toastify](https://fkhadra.github.io/react-toastify/) |
-| Linting        | ESLint (Next.js config)                         |
-| Deployment     | [Vercel](https://vercel.com/)                   |
+| User | What they can do |
+| --- | --- |
+| Guest | Explore the fleet, search cars, and view car details |
+| Renter | Book cars, manage bookings, and cancel reservations |
+| Car Owner | Add, update, manage, and delete car listings |
 
----
-
-## 📁 Project Structure
-
-```
-drive-fleet-car-rental/
-├── public/                  # Static assets (images, icons)
-├── src/
-│   ├── app/                 # Next.js App Router pages
-│   │   ├── page.js          # Home page
-│   │   ├── explore-cars/    # Car listing & detail pages
-│   │   │   └── [id]/        # Dynamic car detail route
-│   │   ├── add-car/         # Add a new car listing
-│   │   ├── my-bookings/     # User booking history
-│   │   └── layout.js        # Root layout
-│   ├── components/          # Reusable UI components
-│   ├── lib/                 # DB connection, auth config, utilities
-│   └── styles/              # Global CSS
-├── .gitignore
-├── eslint.config.mjs
-├── jsconfig.json
-├── next.config.mjs
-├── package.json
-├── postcss.config.mjs
-└── README.md
-```
-
----
-
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- **Node.js** v18 or higher
-- **npm** / **yarn** / **pnpm** / **bun**
-- A running **MongoDB** instance (local or [MongoDB Atlas](https://www.mongodb.com/atlas))
+- Node.js 20 or newer
+- npm
+- A MongoDB database
+- The [DriveFleet server](https://github.com/Khalid-Sifullah-Siam/DriveFlat-server)
 
 ### Installation
 
-1. **Clone the repository**
-
 ```bash
-git clone https://github.com/rashedulislam595/Assignment-9-DriveFleet-Car-Renta-Platform.git
-cd Assignment-9-DriveFleet-Car-Renta-Platform
-```
-
-2. **Install dependencies**
-
-```bash
+git clone https://github.com/Khalid-Sifullah-Siam/DriveFlat-client.git
+cd DriveFlat-client
 npm install
-# or
-yarn install
-# or
-pnpm install
 ```
 
-3. **Set up environment variables**
+Create a `.env.local` file in the project root:
 
-Create a `.env.local` file in the root directory (see [Environment Variables](#-environment-variables) below).
+```env
+MONGO_URI=your_mongodb_connection_string
+BETTER_AUTH_SECRET=your_better_auth_secret
+BETTER_AUTH_URL=http://localhost:3000
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+NEXT_PUBLIC_SERVER_URL=http://localhost:5000
+```
 
-4. **Run the development server**
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
+Open [http://localhost:3000](http://localhost:3000) in your browser. Keep the DriveFleet server running for car and booking features.
 
----
+### Available Commands
 
-## 🔐 Environment Variables
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Create a production build |
+| `npm start` | Start the production server |
+| `npm run lint` | Check the project with ESLint |
 
-Create a `.env.local` file in the project root and add the following:
+## Project Structure
 
-```env
-# MongoDB Connection
-MONGODB_URI=your_mongodb_connection_string
+```text
+src/
+├── app/                  # Next.js App Router pages and auth API route
+├── components/           # Shared sections, cards, modals, and UI
+├── lib/
+│   ├── auth.js           # Better Auth configuration
+│   ├── auth-client.js    # Client-side auth helper
+│   └── data.js           # Car and booking API functions
+└── proxy.js              # Protected route handling
 
-# Better Auth
-BETTER_AUTH_SECRET=your_secret_key
-BETTER_AUTH_URL=http://localhost:3000
-
-# Next.js
-NEXT_PUBLIC_BASE_URL=http://localhost:3000
+public/
+└── images/               # Website and README screenshots
 ```
 
-> ⚠️ Never commit your `.env.local` file. It is already included in `.gitignore`.
+## Screenshots
 
----
+### Home and Explore
 
-## 📄 Available Pages
+<div align="center">
+  <img src="public/images/Screenshot%20(569).png" alt="DriveFleet home page" width="90%" />
+  <br /><br />
+  <img src="public/images/Screenshot%20(568).png" alt="DriveFleet explore cars page" width="90%" />
+</div>
 
-| Route                    | Description                              |
-|--------------------------|------------------------------------------|
-| `/`                      | Home page with featured cars & highlights |
-| `/explore-cars`          | Browse the full car fleet                |
-| `/explore-cars/[id]`     | Individual car detail & booking page     |
-| `/add-car`               | Form to list a new vehicle               |
-| `/my-bookings`           | View and manage your reservations        |
+### Car Details and Booking
 
----
+<div align="center">
+  <img src="public/images/Screenshot%20(567).png" alt="Car details page" width="90%" />
+  <br /><br />
+  <img src="public/images/Screenshot%20(566).png" alt="Car booking interface" width="90%" />
+</div>
 
-### Home Page
-> Featured cars, destination highlights, and available-cars section.
+### Authentication and Dashboard
 
-### Explore Cars
-> Grid view of all available vehicles with category, location, price, and seat info.
+<div align="center">
+  <img src="public/images/Screenshot%20(565).png" alt="DriveFleet login page" width="90%" />
+  <br /><br />
+  <img src="public/images/Screenshot%20(563).png" alt="DriveFleet registration page" width="90%" />
+  <br /><br />
+  <img src="public/images/Screenshot%20(562).png" alt="My bookings page" width="90%" />
+  <br /><br />
+  <img src="public/images/Screenshot%20(561).png" alt="My added cars page" width="90%" />
+</div>
 
-### Car Detail
-> Full description, specs, and booking form for a single vehicle.
+### Responsive Views
 
----
+<div align="center">
+  <img src="public/images/Screenshot%20(560).png" alt="DriveFleet responsive view" width="90%" />
+  <br /><br />
+  <img src="public/images/Screenshot%20(559).png" alt="DriveFleet mobile interface" width="90%" />
+  <br /><br />
+  <img src="public/images/Screenshot%20(558).png" alt="DriveFleet car listing view" width="90%" />
+  <br /><br />
+  <img src="public/images/Screenshot%20(557).png" alt="DriveFleet booking view" width="90%" />
+</div>
 
-## 🚢 Deployment
+## Deployment
 
-This project is deployed on **Vercel**. To deploy your own instance:
+The client is deployed on Vercel. To deploy your own copy:
 
-1. Push the project to your GitHub repository.
-2. Go to [Vercel](https://vercel.com/) and import the repository.
-3. Add your environment variables in the Vercel project settings.
-4. Click **Deploy** — Vercel handles the rest automatically.
+1. Import the client repository into Vercel.
+2. Add the production environment variables.
+3. Set `NEXT_PUBLIC_SERVER_URL` to the deployed server URL.
+4. Deploy the project.
 
-Alternatively, refer to the [Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying) for other hosting options.
+The server must be deployed separately and configured with the required database and authentication values.
 
----
+## Links
 
-- Live Project: [drive-fleet-car-rental.vercel.app](https://drive-fleet-car-rental.vercel.app/)
-
----
+- [Live Application](https://drive-fleet-car-rental.vercel.app/)
+- [Client Repository](https://github.com/Khalid-Sifullah-Siam/DriveFlat-client)
+- [Server Repository](https://github.com/Khalid-Sifullah-Siam/DriveFlat-server)
 
 <div align="center">
 
-© 2026 DriveFleet. All rights reserved.
+Built for smoother rentals, better journeys, and smarter fleet sharing.
 
 </div>
